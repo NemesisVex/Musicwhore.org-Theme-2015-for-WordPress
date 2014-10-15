@@ -21,7 +21,7 @@ get_header();
 			get_template_part( 'content', get_post_format() );
 
 			// Previous/next post navigation.
-			Musicwhore2015_Theme::post_nav();
+			Musicwhore2015_Template_Tags::post_nav();
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) {

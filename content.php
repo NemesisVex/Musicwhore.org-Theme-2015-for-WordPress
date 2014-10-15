@@ -23,7 +23,7 @@
 		<div class="entry-meta">
 			<ul class="list-inline">
 				<?php if ( 'post' == get_post_type() ): ?>
-					<?php Musicwhore2015_Theme::posted_on(); ?>
+					<?php Musicwhore2015_Template_Tags::posted_on(); ?>
 				<?php endif; ?>
 
 				<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
