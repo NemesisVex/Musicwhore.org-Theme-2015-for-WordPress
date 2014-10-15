@@ -39,6 +39,7 @@
 			<?php the_post(); ?>
 			<?php get_template_part( 'content', get_post_format() ); ?>
 		<?php endwhile; ?>
+		<?php Musicwhore2015_Template_Tags::paging_nav(); ?>
 	<?php endif; ?>
 	</div>
 
