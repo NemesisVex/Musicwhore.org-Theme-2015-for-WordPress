@@ -9,8 +9,10 @@
  * @subpackage Musicwhore 2015
  * @since Musicwhore 2014 1.0
  */
-
-wp_footer();
 ?>
+<?php wp_footer(); ?>
+			</div>
+		</div>
+
 	</body>
 </html>

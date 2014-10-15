@@ -9,15 +9,17 @@
  * @subpackage Musicwhore2015
  * @since Musicwhore 2014 1.0
  */
+?>
+<?php get_header(); ?>
 
+<div class="col-md-8">
+<?php if ( have_posts() ) : ?>
+	<?php while ( have_posts() ) : // Start the Loop. ?>
+		<?php the_post(); ?>
+		<?php get_template_part( 'content', get_post_format() ); ?>
+	<?php endwhile; ?>
+<?php endif; ?>
+</div>
 
-get_header();
-
-if ( have_posts() ) :
-	// Start the Loop.
-	while ( have_posts() ) : the_post();
-		get_template_part( 'content', get_post_format() );
-	endwhile;
-endif;
-
-get_footer();
+<?php get_sidebar(); ?>
+<?php get_footer();

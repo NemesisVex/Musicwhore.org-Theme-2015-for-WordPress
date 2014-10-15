@@ -34,52 +34,52 @@
 	</head>
 	<body>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="header-main">
-			<div class="hidden-xs">
-				<h1 class="site-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					<?php
+	<div id="page" class="container">
+		<header id="masthead" class="site-header" role="banner">
+			<div class="header-main">
+				<div class="hidden-xs">
+					<h1 class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+						<?php $description = get_bloginfo( 'description', 'display' ); ?>
+						<?php if ( ! empty ( $description ) ) : ?><small class="site-description"><?php echo esc_html( $description ); ?></small><?php endif; ?>
+					</h1>
+				</div>
 
-					$description = get_bloginfo( 'description', 'display' );
-					if ( ! empty ( $description ) ) :
-						?>
-						<small class="site-description"><?php echo esc_html( $description ); ?></small>
-					<?php endif; ?>
-				</h1>
-			</div>
-
-			<nav id="primary-navigation" class="site-navigation primary-navigation navbar navbar-inverse" role="navigation">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-nav"><?php /*_e( 'Primary Menu', 'musicwhore2014' );*/ ?>
-							<a class="screen-reader-text skip-link sr-only" href="#content"><?php _e( 'Skip to content', 'musicwhore2014' ); ?></a>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<div class="visible-xs">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-brand"><?php bloginfo( 'name' ); ?></a>
+				<nav id="primary-navigation" class="navbar navbar-inverse" role="navigation">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-nav"><?php /*_e( 'Primary Menu', 'musicwhore2014' );*/ ?>
+								<a class="sr-only" href="#content"><?php _e( 'Skip to content', 'musicwhore2015' ); ?></a>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<div class="visible-xs">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-brand"><?php bloginfo( 'name' ); ?></a>
+							</div>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-nav">
+							<?php $nav_menu_args = array( 'theme_location' => 'primary' ); ?>
+							<?php if ( function_exists( 'bootstrap_page_menu' ) ) { $nav_menu_args[ 'fallback_cb' ] = 'bootstrap_page_menu'; } ?>
+							<?php wp_nav_menu( $nav_menu_args ); ?>
+							<?php get_search_form(); ?>
+							<ul class="nav navbar-nav">
+								<li>
+									<ul class="nav-icon-list">
+										<li><a href="http://twitter.com/MusicwhoreOrg/" title="[Twitter]"><img src="<?php echo Musicwhore2015_Theme::get_cdn_uri(); ?>/web/images/icons/twitter.png" alt="[Twitter]" /></a></li>
+										<li><a href="https://www.facebook.com/pages/Musicwhoreorg/109288145780351" title="[Facebook]"><img src="<?php echo Musicwhore2015_Theme::get_cdn_uri(); ?>/web/images/icons/facebook.png" alt="[Facebook]" /></a></li>
+										<li><a href="http://last.fm/user/NemesisVex/" title="[Last.fm]"><img src="<?php echo Musicwhore2015_Theme::get_cdn_uri(); ?>/web/images/icons/lastfm.png" alt="[Last.fm]" /></a></li>
+										<li><a href="<?php bloginfo( 'siteurl' ); ?>/feed/" title="[Musicwhore.org Feed]"><img src="<?php echo Musicwhore2015_Theme::get_cdn_uri(); ?>/web/images/icons/feed.png" alt="[Feed]" /></a></li>
+									</ul>
+								</li>
+							</ul>
 						</div>
 					</div>
-					<div class="collapse navbar-collapse" id="bs-nav">
-						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'bootstrap_page_menu') ); ?>
-						<?php get_search_form(); ?>
-						<ul class="nav navbar-nav">
-							<li>
-								<ul class="nav-icon-list">
-									<li><a href="http://twitter.com/MusicwhoreOrg/" title="[Twitter]"><img src="<?php echo VIGILANTMEDIA_CDN_BASE_URI; ?>/web/images/icons/twitter.png" alt="[Twitter]" /></a></li>
-									<li><a href="https://www.facebook.com/pages/Musicwhoreorg/109288145780351" title="[Facebook]"><img src="<?php echo VIGILANTMEDIA_CDN_BASE_URI; ?>/web/images/icons/facebook.png" alt="[Facebook]" /></a></li>
-									<li><a href="http://last.fm/user/NemesisVex/" title="[Last.fm]"><img src="<?php echo VIGILANTMEDIA_CDN_BASE_URI; ?>/web/images/icons/lastfm.png" alt="[Last.fm]" /></a></li>
-									<li><a href="<?php bloginfo( 'siteurl' ); ?>/feed/" title="[Musicwhore.org Feed]"><img src="<?php echo VIGILANTMEDIA_CDN_BASE_URI; ?>/web/images/icons/feed.png" alt="[Feed]" /></a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-		</div>
+				</nav>
+			</div>
 
-		<div class="search-box">
-		</div>
-	</header><!-- #masthead -->
+			<div class="search-box">
+			</div>
+		</header><!-- #masthead -->
+
+		<div class="row">
