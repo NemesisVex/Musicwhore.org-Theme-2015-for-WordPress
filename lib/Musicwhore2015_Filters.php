@@ -90,4 +90,11 @@ class Musicwhore2015_Filters {
 
 		return $title;
 	}
+
+	public static function register_mt_id_patterns() {
+		if (function_exists('mt_id_mapper_register_pattern')) {
+			mt_id_mapper_register_pattern( array('pattern' => "/^\/(mw\/|)entry\/([0-9]+)/", 'offset' => 2) );
+			mt_id_mapper_register_pattern( array('pattern' => "/entry\.php\?entry_id=([0-9]+)/", 'offset' => 1) );
+		}
+	}
 }
