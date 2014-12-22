@@ -21,4 +21,6 @@ add_action( 'widgets_init', array( 'Musicwhore2015_Filters', 'widgets_init' ) );
 
 add_action( 'wp_enqueue_scripts', array( 'Musicwhore2015_Filters', 'wp_enqueue_scripts' ) );
 
+add_action( 'wp_enqueue_scripts', array( 'Musicwhore2015_Filters', 'wp_enqueue_styles' ), 20 );
+
 add_action( 'mt_id_mapper_pattern_setup', array( 'Musicwhore2015_Filters', 'register_mt_id_patterns' ) );
