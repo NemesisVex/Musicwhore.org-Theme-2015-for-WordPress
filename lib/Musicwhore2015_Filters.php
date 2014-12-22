@@ -58,12 +58,24 @@ class Musicwhore2015_Filters {
 	}
 
 	public static function wp_enqueue_scripts() {
-		wp_enqueue_style( 'musicwhore2014-style', get_stylesheet_uri() );
+		wp_enqueue_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js', array( 'jquery' ) );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
+	}
+
+	public static function wp_enqueue_styles() {
+		wp_enqueue_style( 'bootstrap', '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css' );
+
+		wp_enqueue_style( 'musicwhore2015-font-merriweather', '//fonts.googleapis.com/css?family=Merriweather&subset=latin,latin-ext' );
+		wp_enqueue_style( 'musicwhore2015-font-merriweather-sans', '//fonts.googleapis.com/css?family=Merriweather+Sans&subset=latin,latin-ext' );
+		wp_enqueue_style( 'musicwhore2015-font-lato', '//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' );
+
+		wp_enqueue_style( 'musicwhore2015-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'musicwhore2015-typography', get_stylesheet_directory_uri() . '/css/typography.css' );
+		wp_enqueue_style( 'musicwhore2015-layout', get_stylesheet_directory_uri() . '/css/layout.css' );
 	}
 
 	public static function wp_page_menu_args( $args ) {
