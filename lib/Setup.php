@@ -6,10 +6,28 @@
  * Time: 9:31 PM
  */
 
-class Musicwhore2015_Filters {
+namespace VigilantMedia\WordPress\Themes\Musicwhore2015;
+
+class Setup {
 
 	public function __construct() {
 
+	}
+
+	public static function init() {
+		add_filter( 'wp_page_menu_args', array( __CLASS__, 'wp_page_menu_args' ) );
+
+		add_filter( 'wp_title', array( __CLASS__, 'wp_title' ), 10, 2 );
+
+		add_action( 'after_setup_theme', array( __CLASS__, 'after_setup_theme' ) );
+
+		add_action( 'widgets_init', array( __CLASS__, 'widgets_init' ) );
+
+		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'wp_enqueue_scripts' ) );
+
+		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'wp_enqueue_styles' ), 20 );
+
+		add_action( 'mt_id_mapper_pattern_setup', array( __CLASS__, 'register_mt_id_patterns' ) );
 	}
 
 	public static function after_setup_theme() {
@@ -29,27 +47,27 @@ class Musicwhore2015_Filters {
 //	register_widget( 'Musicwhore2014_Ephemera_Widget' );
 
 		register_sidebar( array(
-			'name'          => __( 'Primary Sidebar', 'musicwhore2015' ),
+			'name'          => __( 'Primary Sidebar', WP_TEXT_DOMAIN ),
 			'id'            => 'sidebar-1',
-			'description'   => __( 'Main sidebar that appears on the left.', 'musicwhore2015' ),
+			'description'   => __( 'Main sidebar that appears on the left.', WP_TEXT_DOMAIN ),
 			'before_widget' => '<aside id="%1$s" class="%2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3>',
 			'after_title'   => '</h3>',
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Content Sidebar', 'musicwhore2015' ),
+			'name'          => __( 'Content Sidebar', WP_TEXT_DOMAIN ),
 			'id'            => 'sidebar-2',
-			'description'   => __( 'Additional sidebar that appears on the right.', 'musicwhore2015' ),
+			'description'   => __( 'Additional sidebar that appears on the right.', WP_TEXT_DOMAIN ),
 			'before_widget' => '<aside id="%1$s" class="%2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3>',
 			'after_title'   => '</h3>',
 		) );
 		register_sidebar( array(
-			'name'          => __( 'Footer Widget Area', 'musicwhore2015' ),
+			'name'          => __( 'Footer Widget Area', WP_TEXT_DOMAIN ),
 			'id'            => 'sidebar-3',
-			'description'   => __( 'Appears in the footer section of the site.', 'musicwhore2015' ),
+			'description'   => __( 'Appears in the footer section of the site.', WP_TEXT_DOMAIN ),
 			'before_widget' => '<aside id="%1$s" class="%2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h3>',
@@ -97,7 +115,7 @@ class Musicwhore2015_Filters {
 
 		// Add a page number if necessary.
 		if ( $paged >= 2 || $page >= 2 ) {
-			$title = "$title $sep " . sprintf( __( 'Page %s', 'musicwhore2015' ), max( $paged, $page ) );
+			$title = "$title $sep " . sprintf( __( 'Page %s', WP_TEXT_DOMAIN ), max( $paged, $page ) );
 		}
 
 		return $title;

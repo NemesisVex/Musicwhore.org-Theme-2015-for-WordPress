@@ -9,16 +9,18 @@
  * @subpackage Musicwhore 2015
  * @since Musicwhore 2014 1.0
  */
+
+namespace VigilantMedia\WordPress\Themes\Musicwhore2015;
 ?>
 <?php get_header(); ?>
 
 	<div class="col-md-8">
 
 			<header>
-				<h2><?php _e( 'Not Found', 'musicwhore2015' ); ?></h2>
+				<h2><?php _e( 'Not Found', WP_TEXT_DOMAIN ); ?></h2>
 			</header>
 
-			<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'musicwhore2015' ); ?></p>
+			<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', WP_TEXT_DOMAIN ); ?></p>
 
 			<?php get_search_form(); ?>
 

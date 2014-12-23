@@ -9,6 +9,8 @@
  * @subpackage Musicwhore 2015
  * @since Musicwhore 2014 1.0
  */
+
+namespace VigilantMedia\WordPress\Themes\Musicwhore2015;
 ?>
 <?php get_header(); ?>
 
@@ -19,16 +21,16 @@
 			<h2>
 				<?php
 				if ( is_day() ) :
-					printf( __( 'Daily Archives: %s', 'musicwhore2015' ), get_the_date() );
+					printf( __( 'Daily Archives: %s', WP_TEXT_DOMAIN ), get_the_date() );
 
 				elseif ( is_month() ) :
-					printf( __( 'Monthly Archives: %s', 'musicwhore2015' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'musicwhore2015' ) ) );
+					printf( __( 'Monthly Archives: %s', WP_TEXT_DOMAIN ), get_the_date( _x( 'F Y', 'monthly archives date format', WP_TEXT_DOMAIN ) ) );
 
 				elseif ( is_year() ) :
-					printf( __( 'Yearly Archives: %s', 'musicwhore2015' ), get_the_date( _x( 'Y', 'yearly archives date format', 'musicwhore2015' ) ) );
+					printf( __( 'Yearly Archives: %s', WP_TEXT_DOMAIN ), get_the_date( _x( 'Y', 'yearly archives date format', WP_TEXT_DOMAIN ) ) );
 
 				else :
-					_e( 'Archives', 'musicwhore2015' );
+					_e( 'Archives', WP_TEXT_DOMAIN );
 
 				endif;
 				?>
@@ -39,7 +41,7 @@
 			<?php the_post(); ?>
 			<?php get_template_part( 'content', get_post_format() ); ?>
 		<?php endwhile; ?>
-		<?php Musicwhore2015_Template_Tags::paging_nav(); ?>
+		<?php TemplateTags::paging_nav(); ?>
 	<?php endif; ?>
 	</div>
 

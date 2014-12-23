@@ -25,11 +25,11 @@ endif;
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 	<nav role="navigation">
-		<h4 class="sr-only"><?php _e( 'Comment navigation', 'musicwhore2015' ); ?></h4>
+		<h4 class="sr-only"><?php _e( 'Comment navigation', WP_TEXT_DOMAIN ); ?></h4>
 
 		<ul class="pager">
-			<li><?php previous_comments_link( __( '&larr; Older Comments', 'musicwhore2015' ) ); ?></li>
-			<li><?php next_comments_link( __( 'Newer Comments &rarr;', 'musicwhore2015' ) ); ?></li>
+			<li><?php previous_comments_link( __( '&larr; Older Comments', WP_TEXT_DOMAIN ) ); ?></li>
+			<li><?php next_comments_link( __( 'Newer Comments &rarr;', WP_TEXT_DOMAIN ) ); ?></li>
 		</ul>
 
 	</nav><!-- #comment-nav-above -->
@@ -47,11 +47,11 @@ endif;
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav role="navigation">
-			<h4 class="sr-only"><?php _e( 'Comment navigation', 'musicwhore2015' ); ?></h4>
+			<h4 class="sr-only"><?php _e( 'Comment navigation', WP_TEXT_DOMAIN ); ?></h4>
 
 			<ul class="pager">
-				<li><?php previous_comments_link( __( '&larr; Older Comments', 'musicwhore2015' ) ); ?></li>
-				<li><?php next_comments_link( __( 'Newer Comments &rarr;', 'musicwhore2015' ) ); ?></li>
+				<li><?php previous_comments_link( __( '&larr; Older Comments', WP_TEXT_DOMAIN ) ); ?></li>
+				<li><?php next_comments_link( __( 'Newer Comments &rarr;', WP_TEXT_DOMAIN ) ); ?></li>
 			</ul>
 
 
@@ -59,7 +59,7 @@ endif;
 	<?php endif; // Check for comment navigation. ?>
 
 	<?php if ( ! comments_open() ) : ?>
-		<p><?php _e( 'Comments are closed.', 'musicwhore2015' ); ?></p>
+		<p><?php _e( 'Comments are closed.', WP_TEXT_DOMAIN ); ?></p>
 	<?php endif; ?>
 
 <?php endif; ?>
@@ -67,9 +67,9 @@ endif;
 <?php
 	$comment_args = array(
 		'fields' => apply_filters('comment_form_default_fields', array(
-			'author' => '<div class="form-group"><label for="author" class="col-md-2 control-label">' . __( 'Name', 'musicwhore2015' ) . ' <span class="required">*</span></label> ' . ( $req ? '<div class="col-md-6">' : '' ) . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" class="form-control" ' . $aria_req . ' /></div></div>',
-			'email' => '<div class="form-group"><label for="email" class="col-md-2 control-label">' . __( 'Email', 'musicwhore2015' ) . ' <span class="required">*</span></label> ' . ( $req ? '<div class="col-md-6">' : '' ) . '<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" class="form-control" ' . $aria_req . ' /></div></div>',
-			'url' => '<div class="form-group"><label for="url" class="col-md-2 control-label">' . __( 'Website', 'musicwhore2015' ) . '</label>' . '<div class="col-md-6"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" class="form-control" /></div></div>',
+			'author' => '<div class="form-group"><label for="author" class="col-md-2 control-label">' . __( 'Name', WP_TEXT_DOMAIN ) . ' <span class="required">*</span></label> ' . ( $req ? '<div class="col-md-6">' : '' ) . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" class="form-control" ' . $aria_req . ' /></div></div>',
+			'email' => '<div class="form-group"><label for="email" class="col-md-2 control-label">' . __( 'Email', WP_TEXT_DOMAIN ) . ' <span class="required">*</span></label> ' . ( $req ? '<div class="col-md-6">' : '' ) . '<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" class="form-control" ' . $aria_req . ' /></div></div>',
+			'url' => '<div class="form-group"><label for="url" class="col-md-2 control-label">' . __( 'Website', WP_TEXT_DOMAIN ) . '</label>' . '<div class="col-md-6"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" class="form-control" /></div></div>',
 		)),
 		'comment_field' => '<div class="form-group"><label for="comment" class="col-sm-2 control-label">' . _x( 'Comment', 'noun' ) . '</label><div class="col-md-6"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="form-control"></textarea></div></div>',
 		'comment_notes_after' => '<p>' . sprintf( __( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ), allowed_tags() ) . '</p>',

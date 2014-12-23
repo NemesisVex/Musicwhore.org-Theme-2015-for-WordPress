@@ -10,6 +10,8 @@
  * @since Musicwhore 2014 1.0
  */
 
+namespace VigilantMedia\WordPress\Themes\Musicwhore2015;
+
 get_header();
 ?>
 
@@ -21,7 +23,7 @@ get_header();
 			get_template_part( 'content', get_post_format() );
 
 			// Previous/next post navigation.
-			Musicwhore2015_Template_Tags::post_nav();
+			TemplateTags::post_nav();
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) {

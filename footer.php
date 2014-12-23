@@ -9,6 +9,8 @@
  * @subpackage Musicwhore 2015
  * @since Musicwhore 2014 1.0
  */
+
+namespace VigilantMedia\WordPress\Themes\Musicwhore2015;
 ?>
 			</div>
 
@@ -18,7 +20,7 @@
 
 				<div class="site-info">
 					<?php do_action( 'musicwhore2015_credits' ); ?>
-					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'musicwhore2015' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'musicwhore2015' ), 'WordPress' ); ?></a>
+					<a href="<?php echo esc_url( __( 'http://wordpress.org/', WP_TEXT_DOMAIN ) ); ?>"><?php printf( __( 'Proudly powered by %s', WP_TEXT_DOMAIN ), 'WordPress' ); ?></a>
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->
 		</div>

@@ -9,6 +9,8 @@
  * @subpackage Musicwhore2015
  * @since Musicwhore 2014 1.0
  */
+
+namespace VigilantMedia\WordPress\Themes\Musicwhore2015;
 ?>
 <div class="col-md-3 col-md-offset-1">
 	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>

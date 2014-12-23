@@ -9,6 +9,8 @@
  * @subpackage Musicwhore 2015
  * @since Musicwhore 2014 1.0
  */
+
+namespace VigilantMedia\WordPress\Themes\Musicwhore2015;
 ?>
 <?php get_header(); ?>
 
@@ -18,7 +20,7 @@
 			<h2 class="archive-title">
 				<?php //Queue the first post, that way we know what author we're dealing with (if that is the case). We reset this later so we can run the loop properly with a call to rewind_posts(). ?>
 				<?php the_post(); ?>
-				<?php printf( __( 'All posts by %s', 'musicwhore2015' ), get_the_author() ); ?>
+				<?php printf( __( 'All posts by %s', WP_TEXT_DOMAIN ), get_the_author() ); ?>
 			</h2>
 			<?php if ( get_the_author_meta( 'description' ) ) : ?>
 				<div class="author-description"><?php the_author_meta( 'description' ); ?></div>
@@ -31,7 +33,7 @@
 			<?php the_post(); ?>
 			<?php get_template_part( 'content', get_post_format() ); ?>
 		<?php endwhile; ?>
-		<?php Musicwhore2015_Template_Tags::paging_nav(); ?>
+		<?php TemplateTags::paging_nav(); ?>
 	<?php endif; ?>
 	</div>
 
