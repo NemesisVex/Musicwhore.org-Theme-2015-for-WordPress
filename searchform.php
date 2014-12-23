@@ -1,3 +1,4 @@
+<?php namespace VigilantMedia\WordPress\Themes\Musicwhore2015; ?>
 <form role="search" method="get" class="navbar-form navbar-left" action="<?php echo home_url( '/' ); ?>">
 	<div class="form-group">
 		<label>

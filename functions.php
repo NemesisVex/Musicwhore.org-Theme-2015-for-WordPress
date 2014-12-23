@@ -8,19 +8,25 @@
  * @since Musicwhore 2014 1.0
  */
 
-require get_template_directory() . '/lib/Musicwhore2015_Filters.php';
-require get_template_directory() . '/lib/Musicwhore2015_Template_Tags.php';
+namespace VigilantMedia\WordPress\Themes\Musicwhore2015;
 
-add_filter( 'wp_page_menu_args', array( 'Musicwhore2015_Filters', 'wp_page_menu_args' ) );
+const WP_TEXT_DOMAIN = 'musicwhore2015';
 
-add_filter( 'wp_title', array( 'Musicwhore2015_Filters', 'wp_title' ), 10, 2 );
+if (!function_exists( __NAMESPACE__ . '\\autoload' )) {
+	function autoload( $class_name )
+	{
+		$class_name = ltrim($class_name, '\\');
+		if ( strpos( $class_name, __NAMESPACE__ ) !== 0 ) {
+			return;
+		}
 
-add_action( 'after_setup_theme', array( 'Musicwhore2015_Filters', 'after_setup_theme' ) );
+		$class_name = str_replace( __NAMESPACE__, '', $class_name );
 
-add_action( 'widgets_init', array( 'Musicwhore2015_Filters', 'widgets_init' ) );
+		$path = get_template_directory() . '/lib' . str_replace('\\', DIRECTORY_SEPARATOR, $class_name) . '.php';
 
-add_action( 'wp_enqueue_scripts', array( 'Musicwhore2015_Filters', 'wp_enqueue_scripts' ) );
+		require_once($path);
+	}
+}
 
-add_action( 'wp_enqueue_scripts', array( 'Musicwhore2015_Filters', 'wp_enqueue_styles' ), 20 );
-
-add_action( 'mt_id_mapper_pattern_setup', array( 'Musicwhore2015_Filters', 'register_mt_id_patterns' ) );
+spl_autoload_register(__NAMESPACE__ . '\\autoload');
+Setup::init();

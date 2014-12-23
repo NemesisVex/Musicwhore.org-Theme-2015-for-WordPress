@@ -9,6 +9,8 @@
  * @subpackage Musicwhore 2015
  * @since Musicwhore 2014 1.0
  */
+
+namespace VigilantMedia\WordPress\Themes\Musicwhore2015;
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes();?>>
@@ -43,7 +45,7 @@
 					<div class="container-fluid">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-nav"><?php /*_e( 'Primary Menu', 'musicwhore2014' );*/ ?>
-								<a class="sr-only" href="#content"><?php _e( 'Skip to content', 'musicwhore2015' ); ?></a>
+								<a class="sr-only" href="#content"><?php _e( 'Skip to content', WP_TEXT_DOMAIN ); ?></a>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
@@ -60,10 +62,10 @@
 							<ul class="nav navbar-nav">
 								<li>
 									<ul class="nav-icon-list">
-										<li><a href="http://twitter.com/MusicwhoreOrg/" title="[Twitter]"><img src="<?php echo Musicwhore2015_Template_Tags::get_cdn_uri(); ?>/web/images/icons/twitter.png" alt="[Twitter]" /></a></li>
-										<li><a href="https://www.facebook.com/pages/Musicwhoreorg/109288145780351" title="[Facebook]"><img src="<?php echo Musicwhore2015_Template_Tags::get_cdn_uri(); ?>/web/images/icons/facebook.png" alt="[Facebook]" /></a></li>
-										<li><a href="http://last.fm/user/NemesisVex/" title="[Last.fm]"><img src="<?php echo Musicwhore2015_Template_Tags::get_cdn_uri(); ?>/web/images/icons/lastfm.png" alt="[Last.fm]" /></a></li>
-										<li><a href="<?php bloginfo( 'siteurl' ); ?>/feed/" title="[Musicwhore.org Feed]"><img src="<?php echo Musicwhore2015_Template_Tags::get_cdn_uri(); ?>/web/images/icons/feed.png" alt="[Feed]" /></a></li>
+										<li><a href="http://twitter.com/MusicwhoreOrg/" title="[Twitter]"><img src="<?php echo TemplateTags::get_cdn_uri(); ?>/web/images/icons/twitter.png" alt="[Twitter]" /></a></li>
+										<li><a href="https://www.facebook.com/pages/Musicwhoreorg/109288145780351" title="[Facebook]"><img src="<?php echo TemplateTags::get_cdn_uri(); ?>/web/images/icons/facebook.png" alt="[Facebook]" /></a></li>
+										<li><a href="http://last.fm/user/NemesisVex/" title="[Last.fm]"><img src="<?php echo TemplateTags::get_cdn_uri(); ?>/web/images/icons/lastfm.png" alt="[Last.fm]" /></a></li>
+										<li><a href="<?php bloginfo( 'siteurl' ); ?>/feed/" title="[Musicwhore.org Feed]"><img src="<?php echo TemplateTags::get_cdn_uri(); ?>/web/images/icons/feed.png" alt="[Feed]" /></a></li>
 									</ul>
 								</li>
 							</ul>
