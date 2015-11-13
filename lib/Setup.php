@@ -92,8 +92,6 @@ class Setup {
 		wp_enqueue_style( 'musicwhore2015-font-lato', '//fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' );
 
 		wp_enqueue_style( 'musicwhore2015-style', get_stylesheet_uri() );
-		wp_enqueue_style( 'musicwhore2015-typography', get_stylesheet_directory_uri() . '/css/typography.css' );
-		wp_enqueue_style( 'musicwhore2015-layout', get_stylesheet_directory_uri() . '/css/layout.css' );
 	}
 
 	public static function wp_page_menu_args( $args ) {

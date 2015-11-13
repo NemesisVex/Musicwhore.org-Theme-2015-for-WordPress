@@ -3,38 +3,8 @@ Theme Name: Musicwhore.org 2015
 Author: Greg Bueno
 Author URI: http://musicwhore.org/
 Description: A WordPress theme customized for Musicwhore.org.
-Version: 2.6
+Version: 1.2
 Text Domain: musicwhore2015
 */
-.site-info {
-  padding-bottom: 1em;
-}
-.comment-list {
-  list-style: none;
-  padding-bottom: 1em;
-}
-.comment-author {
-  position: relative;
-}
-.comment-author .avatar {
-  height: 34px;
-  top: 2px;
-  width: 34px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 2px;
-  position: absolute;
-  left: 0;
-}
-.comment-author,
-.comment-awaiting-moderation,
-.comment-content,
-.comment-list .reply,
-.comment-metadata {
-  padding-left: 50px;
-}
-.comments-title {
-  padding-bottom: 1em;
-}
-.says {
-  display: none;
-}
+.nav-icon-list{list-style:none}.nav-icon-list li{float:left}.nav-icon-list li a{position:relative;display:block;padding:10px 15px}.site-info{padding-bottom:1em}.comment-list{list-style:none;padding-bottom:1em}.comment-author{position:relative}.comment-author .avatar{height:34px;top:2px;width:34px;border:1px solid rgba(0,0,0,0.1);padding:2px;position:absolute;left:0}.comment-author,.comment-awaiting-moderation,.comment-content,.comment-list .reply,.comment-metadata{padding-left:50px}.comments-title{padding-bottom:1em}.says{display:none}body{font-family:"Merriweather Sans", Helvetica, Arial, sans-serif;line-height:2em}h1.site-title a{color:#000}h1.site-title a:hover{text-decoration:none}h1.site-title small{font-size:50%}h3.widget-title{font-size:20px}h3.entry-title{font-family:Lato, Helvetica, Arial, sans-serif;text-transform:uppercase}h3.entry-title a{color:#000;text-decoration:none}.entry-meta{font-variant:small-caps}.entry-content{font-family:Merriweather, Times, serif}.comment-metadata{font-variant:small-caps}
+/*# sourceMappingURL=style.css.map */
