@@ -27,6 +27,8 @@ class Setup {
 
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'wp_enqueue_styles' ), 20 );
 
+		add_filter( 'wp_calculate_image_srcset', array(__CLASS__, 'image_srcset_protocol_relative_urls' ) );
+
 		add_action( 'mt_id_mapper_pattern_setup', array( __CLASS__, 'register_mt_id_patterns' ) );
 	}
 
@@ -117,6 +119,15 @@ class Setup {
 		}
 
 		return $title;
+	}
+
+	public static function image_srcset_protocol_relative_urls( $sources ) {
+		foreach ( $sources as $s => $source ) {
+			if ( isset( $source['url'] ) ) {
+				$sources[$s]['url'] = set_url_scheme( $source['url'], null);
+			}
+		}
+		return $sources;
 	}
 
 	public static function register_mt_id_patterns() {
