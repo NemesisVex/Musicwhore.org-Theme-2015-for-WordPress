@@ -38,6 +38,11 @@ namespace VigilantMedia\WordPress\Themes\Musicwhore2015;
 	</header>
 
 	<?php the_content( __( 'Continue reading &raquo;', WP_TEXT_DOMAIN ) ); ?>
+
+    <p>
+        <?php the_tags(); ?>
+    </p>
+
 	<?php wp_link_pages( array(
 		'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'musicwhore2014' ) . '</span>',
 		'after'       => '</div>',
